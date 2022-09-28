@@ -1,1 +1,1 @@
-select * from diamonds;
+select *, null from diamonds;
