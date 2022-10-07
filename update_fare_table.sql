@@ -4,7 +4,7 @@ USING (
     day(tpep_pickup_datetime) as day,
     count(*) as daily_trip_count
   FROM
-    nyctaxi.trips
+    samples.nyctaxi.trips
   WHERE
     tpep_pickup_datetime BETWEEN TIMESTAMP '2016-01-01 12:07'
     AND TIMESTAMP '2016-01-14 12:07'
