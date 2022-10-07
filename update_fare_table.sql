@@ -1,5 +1,3 @@
-USE CATALOG SAMPLES;
-
 INSERT INTO TABLE daily_fare_table
 SELECT
   T.weekday,
