@@ -10,7 +10,7 @@ from
         `samples`.`nyctaxi`.`trips`
     WHERE
         tpep_pickup_datetime BETWEEN TIMESTAMP '2016-01-01 12:07'
-        AND TIMESTAMP '2016-01-16 12:07'
+        AND TIMESTAMP '2016-01-14 12:07'
 )
 group by day order by day
 ;
