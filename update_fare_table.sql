@@ -1,4 +1,5 @@
-INSERT INTO TABLE default.daily_fare_table
+-- USE CATALOG SAMPLES;
+
 SELECT
   T.weekday,
   CASE
@@ -10,8 +11,8 @@ SELECT
     WHEN T.weekday = 6 THEN 'Friday'
     WHEN T.weekday = 7 THEN 'Saturday'
     ELSE 'N/A'
-  END AS day_of_week,
-  T.fare_amount,
+  END AS day_of_week, 
+  T.fare_amount, 
   T.trip_distance
 FROM
   (
@@ -19,14 +20,14 @@ FROM
       dayofweek(tpep_pickup_datetime) as weekday,
       *
     FROM
-      `samples`.`nyctaxi`.`trips`
+      samples.nyctaxi.trips
     WHERE
       (
-        pickup_zip in (10001, 10002)
+        pickup_zip in ({{ pickupzip }})
         OR pickup_zip in (10018)
       )
-      AND tpep_pickup_datetime BETWEEN TIMESTAMP '2016-01-16 12:07'
-      AND TIMESTAMP '2017-01-16 12:07'
+      AND tpep_pickup_datetime BETWEEN TIMESTAMP '{{ pickup_date.start }}'
+      AND TIMESTAMP '{{ pickup_date.end }}'
       AND trip_distance < 10
   ) T
 ORDER BY
