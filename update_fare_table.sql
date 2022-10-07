@@ -1,4 +1,4 @@
-MERGE INTO TABLE daily_fare_table
+MERGE INTO daily_fare_table
 USING (
   SELECT
     day(tpep_pickup_datetime) as day,
