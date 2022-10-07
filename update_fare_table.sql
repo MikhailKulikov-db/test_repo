@@ -30,5 +30,5 @@ FROM
       AND trip_distance < 10
   ) T
 ORDER BY
-  T.weeday
+  T.weekday
 ;
