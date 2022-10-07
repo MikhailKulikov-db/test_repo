@@ -1,4 +1,4 @@
-INSERT INTO TABLE daily_fare_table
+INSERT INTO TABLE default.daily_fare_table
 SELECT
   T.weekday,
   CASE
