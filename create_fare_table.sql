@@ -1,6 +1,6 @@
 CREATE
 OR REPLACE TABLE daily_fare_table as
-select count(*) as daily_trip_count
+select count(*) as daily_trip_count, tpep_pickup_datetime
 from
 (
     SELECT
