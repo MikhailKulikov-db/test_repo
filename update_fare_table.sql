@@ -23,11 +23,11 @@ FROM
       samples.nyctaxi.trips
     WHERE
       (
-        pickup_zip in ({{ pickupzip }})
-        OR pickup_zip in (10018)
+        -- pickup_zip in ({{ pickupzip }})
+        pickup_zip in (10018)
       )
-      AND tpep_pickup_datetime BETWEEN TIMESTAMP '{{ pickup_date.start }}'
-      AND TIMESTAMP '{{ pickup_date.end }}'
+      -- AND tpep_pickup_datetime BETWEEN TIMESTAMP '{{ pickup_date.start }}'
+      -- AND TIMESTAMP '{{ pickup_date.end }}'
       AND trip_distance < 10
   ) T
 ORDER BY
