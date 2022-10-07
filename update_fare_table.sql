@@ -1,5 +1,7 @@
 USE CATALOG hive_metastore;
 
+select 1 + 1;
+
 -- INSERT INTO TABLE hive_metastore.default.daily_fare_table
 -- SELECT
 --   T.weekday,
