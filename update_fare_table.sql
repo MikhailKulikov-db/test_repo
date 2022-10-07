@@ -1,4 +1,4 @@
-replace TABLE daily_fare_table as
+create or replace TABLE daily_fare_table as
 SELECT
   T.weekday,
   CASE
