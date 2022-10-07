@@ -1,6 +1,6 @@
 CREATE
 OR REPLACE TABLE daily_fare_table as
-select if(day not in (12, 13, 14), count(*) as daily_trip_count, 0), day
+select if(day not in (12, 13, 14), count(*), 0) as daily_trip_count, day
 from
 (
     SELECT
