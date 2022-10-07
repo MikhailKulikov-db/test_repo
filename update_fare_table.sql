@@ -1,4 +1,4 @@
-USE CATALOG SAMPLES;
+-- USE CATALOG SAMPLES;
 
 INSERT INTO TABLE hive_metastore.default.daily_fare_table
 SELECT
