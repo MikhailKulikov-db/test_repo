@@ -1,4 +1,6 @@
-create or replace TABLE daily_fare_table as
+USE CATALOG SAMPLES;
+
+INSERT INTO TABLE daily_fare_table
 SELECT
   T.weekday,
   CASE
@@ -19,14 +21,14 @@ FROM
       dayofweek(tpep_pickup_datetime) as weekday,
       *
     FROM
-      samples.nyctaxi.trips
+      `samples`.`nyctaxi`.`trips`
     WHERE
       (
-        pickup_zip in (10001)
+        pickup_zip in (10001, 10002)
         OR pickup_zip in (10018)
       )
-      AND tpep_pickup_datetime BETWEEN TIMESTAMP '2016-01-01 12:07'
-      AND TIMESTAMP '2016-01-16 12:07'
+      AND tpep_pickup_datetime BETWEEN TIMESTAMP '2016-01-16 12:07'
+      AND TIMESTAMP '2017-01-16 12:07'
       AND trip_distance < 10
   ) T
 ORDER BY
